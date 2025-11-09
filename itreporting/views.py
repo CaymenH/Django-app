@@ -6,3 +6,4 @@ def home(request):
     return render(request, 'itreporting/home.html', {'title': 'Welcome'})
 def about(request):
     return HttpResponse('<h1>Student IT Services About</h1>')
+
