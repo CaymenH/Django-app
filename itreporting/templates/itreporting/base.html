@@ -22,7 +22,7 @@
         <header class="site-header">
             <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
                 <div class="container">
-                    <a class="navbar-brand mr-4" href="{% url 'home' %}">Student IT Services</a>
+                    <a class="navbar-brand mr-4" href="{% url 'itreporting:home' %}">Student IT Services</a>
 
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggle"
                             aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,9 +32,9 @@
                     <div class="collapse navbar-collapse" id="navbarToggle">
                         <!-- Left Side -->
                         <div class="navbar-nav me-auto">
-                            <a class="nav-item nav-link" href="{% url 'home' %}">Home</a>
-                            <a class="nav-item nav-link" href="{% url 'about' %}">About</a>
-                            <a class="nav-item nav-link" href="{% url 'contact' %}">Contact</a>
+                            <a class="nav-item nav-link" href="{% url 'itreporting:home' %}">Home</a>
+                            <a class="nav-item nav-link" href="{% url 'itreporting:about' %}">About</a>
+                            <a class="nav-item nav-link" href="{% url 'itreporting:contact' %}">Contact</a>
                             <a class="nav-item nav-link" href="{% url 'itreporting:report'%}">Report</a>
                         </div>
 

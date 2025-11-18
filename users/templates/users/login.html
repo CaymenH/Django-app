@@ -1,7 +1,5 @@
 {% extends "itreporting/base.html" %} 
 
-{% load crispy_forms_tags %} 
-
 {% block content %} 
 
 <div class="content-section"> 
@@ -14,7 +12,7 @@
 
             <legend class="border-bottom mb-4">Student IT Services - Login</legend> 
 
-            {{ form|crispy}} 
+            {{ form.as_p }}
 
         </fieldset> 
 
