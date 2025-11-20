@@ -29,3 +29,6 @@ class PostDetailView(DetailView):
     model = Issue
     template_name = 'itreporting/issue_detail.html'
 
+class PostCreateView(CreateView):
+    model = Issue
+    fields = ['type', 'room', 'urgent', 'details']
