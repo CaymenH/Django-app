@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from itreporting import views
+from .views import PostListView, PostDetailView
 
 app_name = 'itreporting'
 

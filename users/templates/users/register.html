@@ -1,6 +1,7 @@
 {% extends "itreporting/base.html" %}
+
 {% load crispy_forms_tags %}
-{{ form | crispy }}
+
 
 {% block content %}
 <div class="content-section">
@@ -8,7 +9,9 @@
         {% csrf_token %}
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">Student Registration Form</legend>
-            {{ form.as_p }}
+            
+            {% load crispy_forms_tags %}
+
         </fieldset>
         <div class="form-group">
             <button class="btn btn-outline-info" type="submit">Register</button>
