@@ -25,7 +25,9 @@ urlpatterns = [
     path('', views.home, name = 'home'),
     path('about/', views.about, name = 'about'),
     path('contact/', views.contact, name = 'contact'),
-    path('report/', views.report, name = 'report'),
+    path('report/', PostListView.as_view(), name = 'report'),
+    path('issues/<int:pk>/', PostDetailView.as_view(), name = 'issue-detail'),
+ 
 
 
 
