@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Issue
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.views.generic import ListView, DetailView,CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
@@ -29,7 +30,7 @@ class PostDetailView(DetailView):
     model = Issue
     template_name = 'itreporting/issue_detail.html'
 
-class PostCreateView(CreateView):
+class PostCreateView(LoginRequiredMixin,CreateView):
     model = Issue
     fields = ['type', 'room', 'urgent', 'details']
     def form_valid(self, form):
