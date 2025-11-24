@@ -36,3 +36,6 @@ class PostCreateView(LoginRequiredMixin,CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+class PostUpdateView(LoginRequiredMixin, UpdateView):
+    model = Issue
+    fields = ['type', 'room', 'details']
