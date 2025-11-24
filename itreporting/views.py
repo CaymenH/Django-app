@@ -32,3 +32,6 @@ class PostDetailView(DetailView):
 class PostCreateView(CreateView):
     model = Issue
     fields = ['type', 'room', 'urgent', 'details']
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
