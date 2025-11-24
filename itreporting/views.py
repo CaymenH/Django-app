@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Issue
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+from django.contrib.auth.mixins import UserPassesTestMixin
 from django.views.generic import ListView, DetailView,CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 # from .models import Issues
@@ -36,6 +36,7 @@ class PostCreateView(LoginRequiredMixin,CreateView):
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
-class PostUpdateView(LoginRequiredMixin, UpdateView):
+
+class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Issue
-    fields = ['type', 'room', 'details']
+    success_url = '/report'
