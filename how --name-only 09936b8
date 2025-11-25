@@ -1,0 +1,201 @@
+[33mcommit 09936b848df4b2df0267a92def23eca7d98e4c90[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Tue Nov 25 15:26:21 2025 +0000
+
+    created delete issue template and added issue delete url
+
+[33mcommit d692b82ae2c80c2ed5f15996f116507f64b62f2d[m
+Merge: b1540e4 5a09a2f
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Mon Nov 24 22:54:38 2025 +0000
+
+    Merge branch 'main' of https://github.com/CaymenH/Django-app
+
+[33mcommit b1540e42996a46abdd681cf070b9761b10d7d89a[m
+Merge: 8d29af5 15cbd3b
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Mon Nov 24 22:00:14 2025 +0000
+
+    added postupdate as had to merge file as i had an issue with naming of files
+
+[33mcommit 5a09a2f157ef24695dafadb18acd4182aa536ed1[m[33m ([m[1;31morigin/main[m[33m)[m
+Merge: 8d29af5 15cbd3b
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Mon Nov 24 22:00:14 2025 +0000
+
+    added deletepost and imported userpassestestmixen
+
+[33mcommit 8d29af594fab1820b4bee54f0fb51e403216916f[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Mon Nov 24 21:49:57 2025 +0000
+
+    added deletepost and imported userpassestestmixen
+
+[33mcommit d64e1215d8bd0253e1caa2b5ec182f61da781672[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Mon Nov 24 19:07:16 2025 +0000
+
+    added postupdate to view.py and imported and add a path to update issues
+
+[33mcommit 65c1fa0221e464ec64a109702818e4ef6c1f801f[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Mon Nov 24 18:45:17 2025 +0000
+
+    update settings.py so none authenicated user is redirect to home from issue
+
+[33mcommit 7f602e56269ff61f7a65b34d164e5461b2494582[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Mon Nov 24 18:25:52 2025 +0000
+
+    update settings.py so none authenicated user is redirect to home from issue new
+
+[33mcommit ff585a91943b7aef123b9a262a4807820bfe5e06[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Mon Nov 24 18:18:59 2025 +0000
+
+    views.py is updated to none users can't see issues
+
+[33mcommit 15cbd3b7cfade2d4531ad2d9e6bb2f99ca6b1b4b[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Mon Nov 24 19:07:16 2025 +0000
+
+    added postupdate to view.py and imported and add a path to update issues
+
+[33mcommit 6e075548244f30c6e3809da784e7447f07ef14b5[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Mon Nov 24 18:45:17 2025 +0000
+
+    update settings.py so none authenicated user is redirect to home from issue
+
+[33mcommit 5c1110f1dbca063fc3de023613ae5d5d0334ea24[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Mon Nov 24 18:25:52 2025 +0000
+
+    update settings.py so none authenicated user is redirect to home from issue new
+
+[33mcommit 1e335b0df0c211d60c9ceedc1f5f933279689b1c[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Mon Nov 24 18:18:59 2025 +0000
+
+    views.py is updated to none users can't see issues
+
+[33mcommit 10af4ca6b5de7c5550159b462f52c7b32c4e0445[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Mon Nov 24 18:00:19 2025 +0000
+
+    views.py is updated to check if the user wrote the issue, models.py brings the issue to your page
+
+[33mcommit 7cc2adf9daca851f66c35dd2dab76549d25670bb[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Thu Nov 20 21:01:43 2025 +0000
+
+    fixed saved issue_form
+
+[33mcommit 445e0fe0581bb2dc244e7393f5d08481048b4b39[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Thu Nov 20 20:45:25 2025 +0000
+
+    added url and added and indented issue_form template
+
+[33mcommit 1c917913adebe601bd9cdffb4fe51c04163c4e04[m
+Merge: 81daeb7 9dfba77
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Thu Nov 20 20:20:40 2025 +0000
+
+    removed issue_detail as it was in users and redid it in itreporting and corrected indentation
+
+[33mcommit 81daeb7845e181ed73b8d98f6a4d9aba4814bb25[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Thu Nov 20 20:07:40 2025 +0000
+
+    indented issue_detail code and updated the report.html link
+
+[33mcommit 9dfba77ad2c2cf9d3e4b1ae151d3f1e3e670c725[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Thu Nov 20 18:48:09 2025 +0000
+
+    added issue_detail code to template
+
+[33mcommit 55a2219401af0f60edc5e9ae636e6d71d33f95bd[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Thu Nov 20 18:42:04 2025 +0000
+
+    added issue_detail template
+
+[33mcommit 71654aa038badf4a3aeb4e07f31b484eb90f3e4f[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Thu Nov 20 18:28:49 2025 +0000
+
+    added postlistviews and postdetailview to views.py
+
+[33mcommit 7b5630141a687430720f5f907baf6b2efe73779b[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Tue Nov 18 15:14:40 2025 +0000
+
+    report works and added app_name to itreporting urls and fixed url links
+
+[33mcommit e0fa7afe8786e12d9d480db82fbadfe200fdfac4[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Tue Nov 18 14:24:09 2025 +0000
+
+    work up to week 7 and added issues
+
+[33mcommit 37b346169a738b18bac53ee5d116d32aeca82d18[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Sun Nov 16 11:17:57 2025 +0000
+
+    Saving my new work in main
+
+[33mcommit 38cae66fb15edbaf292d78eb8537c43214b75822[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Sun Nov 16 11:16:05 2025 +0000
+
+    Remove virtual environment from Git tracking
+
+[33mcommit 75da243cf2b676b0dee16e0e6c7d8d46de038a66[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Mon Nov 10 17:28:58 2025 +0000
+
+    added issues
+
+[33mcommit 18acb9ea73a5e9783f3e9693fa5abb9429988b2d[m[33m ([m[1;32mtemp-login[m[33m)[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Mon Nov 10 17:08:29 2025 +0000
+
+    I have covered student user can create an account, profile html, creating a profile upon registration, profile displaying image, i have commited both weeks at once as i have been ill and working hard to catch up
+
+[33mcommit 5a786da27aa73db595fdf2fe51932ef823b8ff05[m[33m ([m[1;32mtemp-restore[m[33m)[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Sun Nov 9 14:03:41 2025 +0000
+
+    login and logout
+
+[33mcommit 1c154d2bcfc699c55612cd800186651d44544353[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Tue Oct 21 14:44:33 2025 +0000
+
+    Added basic project structure
+
+[33mcommit 543bac225f75f487db01e621d6fb8a5111be7d41[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Mon Oct 13 21:56:12 2025 +0000
+
+    Added file in feature-branch
+
+[33mcommit 57b392e823a31905d4489732e5533a83d158e399[m
+Author: CaymenH <Caymenhayes1@icloud.com>
+Date:   Mon Oct 13 21:48:31 2025 +0000
+
+    Added file1.txt for testing push
+
+[33mcommit d8bf432b297ea6ff54e17f8dd74bc0e4b62a8622[m
+Author: CaymenH <158457020+CaymenH@users.noreply.github.com>
+Date:   Mon Oct 13 20:45:02 2025 +0000
+
+    Update README.md
+
+[33mcommit 30a728a25f17e4f759a3f927f0520cc1cd5b29ab[m
+Author: CaymenH <158457020+CaymenH@users.noreply.github.com>
+Date:   Mon Oct 13 19:39:20 2025 +0000
+
+    Initial commit

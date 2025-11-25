@@ -1,17 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Issue
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.mixins import UserPassesTestMixin
-from django.views.generic import ListView, DetailView,CreateView, UpdateView, DeleteView
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
-# from .models import Issues
 
 # Create your views here.
 def home(request):
     return render(request, 'itreporting/home.html', {'title': 'Welcome'})
+
 def about(request):
     return HttpResponse('<h1>Student IT Services About</h1>')
+
 def contact(request):
     return HttpResponse('<h1>contact information</h1>')
 
@@ -19,27 +19,39 @@ def report(request):
     daily_report = {'issues': Issue.objects.all(), 'title': 'Issues,Reported'}
     return render(request, 'itreporting/report.html', daily_report)
 
+
 class PostListView(ListView):
     model = Issue
     ordering = ['-date_submitted']
     template_name = 'itreporting/report.html'
     context_object_name = 'issues'
-    paginate_by = 10 # Optional pagination
+    paginate_by = 10  # Optional pagination
+
 
 class PostDetailView(DetailView):
     model = Issue
     template_name = 'itreporting/issue_detail.html'
 
-class PostCreateView(LoginRequiredMixin,CreateView):
+
+class PostCreateView(LoginRequiredMixin, CreateView):
     model = Issue
     fields = ['type', 'room', 'urgent', 'details']
+
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+
 class PostUpdateView(LoginRequiredMixin, UpdateView):
     model = Issue
     fields = ['type', 'room', 'details']
 
+
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
-    Model = Issue
-    success_url = '/report'
+    model = Issue  # lowercase 'model'
+    template_name = 'itreporting/issue_confirm_delete.html'
+    success_url = reverse_lazy('itreporting:report')
+
+    def test_func(self):
+        issue = self.get_object()
+        return self.request.user == issue.author
