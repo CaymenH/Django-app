@@ -25,7 +25,7 @@ class PostListView(ListView):
     ordering = ['-date_submitted']
     template_name = 'itreporting/report.html'
     context_object_name = 'issues'
-    paginate_by = 10  # Optional pagination
+    paginate_by = 5  # Optional pagination
 
 
 class PostDetailView(DetailView):
