@@ -82,11 +82,8 @@ WSGI_APPLICATION = 'itapps.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'djangodb',
-        'USER':'root',
-        'PASSWORD':'rubythedog1',
-        'HOST':'localhost',
-        'PORT':'3306',
+        'OPTIONS': {'read_default_file': '/home/student/Desktop/DCBS/my.cnf', # Replace with the actual path to my.cnf
+        },
     }
 }
 
