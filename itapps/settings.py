@@ -81,7 +81,7 @@ WSGI_APPLICATION = 'itapps.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sql',
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'djangodb',
         'USER':'root',
         'PASSWORD':'rubythedog1',
