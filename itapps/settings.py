@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -79,14 +80,17 @@ WSGI_APPLICATION = 'itapps.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'OPTIONS': {'read_default_file': '/home/student/Desktop/DCBS/my.cnf', # Replace with the actual path to my.cnf
-        },
+        'NAME': os.environ['AZURE_DB_NAME'],
+        'HOST': os.environ['AZURE_DB_HOST'],
+        'PORT': os.environ['AZURE_DB_PORT'],
+        'USER': os.environ['AZURE_DB_USER'],
+        'PASSWORD': os.environ['AZURE_DB_PASSWORD'],
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
