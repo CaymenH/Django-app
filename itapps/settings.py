@@ -31,10 +31,6 @@ else:
     ALLOWED_HOSTS = [WEBSITE_HOSTNAME]
     CSRF_TRUSTED_ORIGINS = [f'https://{WEBSITE_HOSTNAME}']
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -92,11 +88,16 @@ WSGI_APPLICATION = 'itapps.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.environ['AZURE_DB_NAME'],
-        'HOST': os.environ['AZURE_DB_HOST'],
-        'PORT': os.environ['AZURE_DB_PORT'],
-        'USER': os.environ['AZURE_DB_USER'],
-        'PASSWORD': os.environ['AZURE_DB_PASSWORD'],
+        'NAME': os.environ.get('AZURE_DB_NAME'),
+        'HOST': os.environ.get('AZURE_DB_HOST'),
+        'PORT': os.environ.get('AZURE_DB_PORT', '3306'),
+        'USER': os.environ.get('AZURE_DB_USER'),
+        'PASSWORD': os.environ.get('AZURE_DB_PASSWORD'),
+        'OPTIONS': {
+            'ssl': {
+                'ca': '/etc/ssl/certs/ca-certificates.crt'
+            }
+        },
     }
 }
 
