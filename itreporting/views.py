@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Issue
+#from .forms import ContactForm
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.contrib import messages
 from django.urls import reverse_lazy
 
 # Create your views here.
@@ -10,10 +12,10 @@ def home(request):
     return render(request, 'itreporting/home.html', {'title': 'Welcome'})
 
 def about(request):
-    return HttpResponse('<h1>Student IT Services About</h1>')
-
+    return render(request, 'itreporting/about.html', {'title': 'About'})
 def contact(request):
-    return HttpResponse('<h1>contact information</h1>')
+    return render(request, 'itreporting/contact.html',   {'title' : 'Contact'})
+
 
 def report(request):
     daily_report = {'issues': Issue.objects.all(), 'title': 'Issues,Reported'}
@@ -55,3 +57,4 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         issue = self.get_object()
         return self.request.user == issue.author
+    
