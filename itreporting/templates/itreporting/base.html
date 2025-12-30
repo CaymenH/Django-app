@@ -4,6 +4,7 @@
 <html lang="en">
 <head>
     <!-- Required meta tags -->
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -14,15 +15,15 @@
           crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <style>h1 {color: #130d18;} </style>
     <title>Student IT Services - {{ title }}</title>
 </head>
 
 <body>
-    <div class="container">
         <header class="site-header">
-            <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+            <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top" style="background-color: #4a148c !important;">
                 <div class="container">
-                    <a class="navbar-brand mr-4" href="{% url 'itreporting:home' %}">Student IT Services</a>
+                    <a class="navbar-brand mr-4" href="{% url 'itreporting:home' %}">Student</a>
 
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggle"
                             aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,6 +37,7 @@
                             <a class="nav-item nav-link" href="{% url 'itreporting:about' %}">About</a>
                             <a class="nav-item nav-link" href="{% url 'itreporting:contact' %}">Contact</a>
                             <a class="nav-item nav-link" href="{% url 'itreporting:report'%}">Report</a>
+                            <a class="nav-item nav-link" href="{% url 'itreporting:module'%}">Module</a>
                         </div>
 
                         <!-- Right Side -->
@@ -45,7 +47,7 @@
                              <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
                                 <form method="post" id="frm_logout" action="{% url 'logout' %}" style="display:inline;">
                                     {% csrf_token %}
-                                    <button type="submit" class="btn btn-link nav-link p-0" style="color:inherit; text-decoration:none;">
+                                    <button type="submit" class="btn btn-link nav-link p-0" style="color:#ffffff; text-decoration:none;">
                                         Logout
                                     </button>
                                 </form>
@@ -58,24 +60,28 @@
                 </div>
             </nav>
         </header>
+        <div class="container">  
+            
+
+        
 
         <main class="mt-5 pt-4">
             <div class="row">
                 <div class="col-md-8">
                     {% block content %}{% endblock %}
-                </div>
 
+                </div>
                 <div class="col-md-4">
                     <div class="content-section">
                         <h3>General Information</h3>
                         <p class="text-muted">
-                            hello
+                            welcome to the university website i hope you can find the Information and course your looking for
                         </p>
                         <ul class="list-group">
-                            <li class="list-group-item list-group-item-light">Latest Issues Reported</li>
-                            <li class="list-group-item list-group-item-light">IT Policies</li>
-                            <li class="list-group-item list-group-item-light">IT Regulations</li>
-                            <li class="list-group-item list-group-item-light">Upcoming Events</li>
+                            <li class="list-group-item list-group-item-light">Computer Science</li>
+                            <li class="list-group-item list-group-item-light">engineering</li>
+                            <li class="list-group-item list-group-item-light">IT</li>
+                            <li class="list-group-item list-group-item-light">Smart Computing</li>
                         </ul>
                     </div>
                 </div>

@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Issue
-#from .forms import ContactForm
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib import messages
@@ -13,8 +12,12 @@ def home(request):
 
 def about(request):
     return render(request, 'itreporting/about.html', {'title': 'About'})
+
 def contact(request):
-    return render(request, 'itreporting/contact.html',   {'title' : 'Contact'})
+    return render(request, 'itreporting/contact.html', {'title': 'contact'})
+
+def module(request):
+    return render(request, 'itreporting/module.html',   {'title' : 'Module'})
 
 
 def report(request):
