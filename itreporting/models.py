@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 from django.urls import reverse
 
 
@@ -26,7 +26,9 @@ class Module(models.Model):
     category = models.CharField(max_length=50)
     description = models.TextField()
     availability = models.CharField (max_length=100, choices= [('Available', 'Available' ), ('Unavailable','Unavailable')])
-    register = models.CharField(max_length=50)
+    allowed_courses = models.ManyToManyField(Group, blank = True)
+    def __str__(self):
+        return f'{self.code} - {self.name}'
 
 
 class Registration(models.Model):
