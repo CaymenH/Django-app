@@ -1,8 +1,7 @@
 from django.db import models
 from django.utils import timezone
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import User
 from django.urls import reverse
-
 
 class Issue(models.Model):
     type = models.CharField(max_length=100, choices = [('Hardware','Hardware'), ('Software', 'Software')])
@@ -26,7 +25,7 @@ class Module(models.Model):
     category = models.CharField(max_length=50)
     description = models.TextField()
     availability = models.CharField (max_length=100, choices= [('Available', 'Available' ), ('Unavailable','Unavailable')])
-    allowed_courses = models.ManyToManyField(Group, blank = True)
+    course = models.CharField(max_length= 50)
     def __str__(self):
         return f'{self.code} - {self.name}'
 
