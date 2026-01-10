@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Issue
+from .models import Issue, Module, Registration
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib import messages
@@ -17,12 +17,18 @@ def contact(request):
     return render(request, 'itreporting/contact.html', {'title': 'contact'})
 
 def module(request):
-    return render(request, 'itreporting/module.html',   {'title' : 'Module'})
+    module = {'modules': Module.objects.all(), 'title': 'Module'}
+    return render(request, 'itreporting/module.html', module)
 
 
 def report(request):
     daily_report = {'issues': Issue.objects.all(), 'title': 'Issues,Reported'}
     return render(request, 'itreporting/report.html', daily_report)
+
+
+def registration(request):
+    registration = {'registrations': Registration.objects.all(), 'title': 'Registrations'}
+    return render(request, 'itreporting/registration.html', registration)
 
 
 class PostListView(ListView):
@@ -60,4 +66,6 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     def test_func(self):
         issue = self.get_object()
         return self.request.user == issue.author
+    
+
     
