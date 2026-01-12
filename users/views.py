@@ -20,10 +20,11 @@ def register(request):
 
 @login_required
 def profile(request):
+    student_profile = request.user.student
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         s_form= StudentUpdateForm(request.POST, request.FILES,
-        instance=request.user.student)
+        instance= student_profile)
         if u_form.is_valid() and s_form.is_valid():
             u_form.save()
             s_form.save()
@@ -31,7 +32,7 @@ def profile(request):
             return redirect('profile')
     else:
         u_form = UserUpdateForm(instance = request.user)
-        s_form = StudentUpdateForm(instance = request.user.student)
+        s_form = StudentUpdateForm(instance = student_profile)
     context = {'u_form': u_form, 's_form': s_form, 'title': 'Student Profile'}
     return render(request, 'users/profile.html', context)
 
