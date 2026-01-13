@@ -1,11 +1,12 @@
 from django.db import models
 
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 from django.db import models 
 
 
 class Student(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    group = models.ForeignKey(Group, on_delete=models.SET_NULL, null= True, blank= True )
     date_of_birth = models.DateField(null=True, blank=True)
     address= models.CharField(max_length=255, blank=True)
     city_town = models.CharField(max_length=255, blank=True)
