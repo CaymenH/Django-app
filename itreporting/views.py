@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Issue, Module, Registration
+from .models import Issue, Module, Registration, Course
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib import messages
@@ -29,6 +29,12 @@ def report(request):
 def registration(request):
     registration = {'registrations': Registration.objects.all(), 'title': 'Registrations'}
     return render(request, 'itreporting/registration.html', registration)
+
+def course_detail(request, pk):
+    course = Course.objects.get(pk=pk)  
+    modules = course.modules.all()       
+    context = {'course': course,'modules': modules,'title': course.name}
+    return render(request, 'itreporting/course_detail.html', context)
 
 
 class PostListView(ListView):

@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from itreporting import views
-from .views import PostListView, PostDetailView, PostCreateView,PostUpdateView, PostDeleteView
+from .views import PostListView, PostDetailView, PostCreateView,PostUpdateView, PostDeleteView, course_detail
 app_name = 'itreporting'
 
 urlpatterns = [
@@ -31,6 +31,7 @@ urlpatterns = [
     path('issue/new/', PostCreateView.as_view(), name = 'issue-create'),
     path('issues/<int:pk>/update/', PostUpdateView.as_view(), name = 'issue-update'),
     path('issues/<int:pk>/delete/',  PostDeleteView.as_view(), name = 'issue-delete'),
+    path('course/<int:pk>/', course_detail, name='course-detail'),
 
 
 

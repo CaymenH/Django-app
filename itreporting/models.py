@@ -25,7 +25,7 @@ class Module(models.Model):
     category = models.CharField(max_length=50)
     description = models.TextField()
     availability = models.CharField (max_length=100, choices= [('Available', 'Available' ), ('Unavailable','Unavailable')])
-    course = models.CharField(max_length= 50)
+    course = models.ForeignKey("Course", related_name= "modules", on_delete=models.CASCADE)
     def __str__(self):
         return f'{self.code} - {self.name}'
 
@@ -40,3 +40,10 @@ class Registration(models.Model):
     
     def __str__(self):
         return f'Registration #{self.id}'
+    
+
+class Course(models.Model):
+    name = models.CharField(max_length= 50)
+
+    def __str__(self):
+        return self.name
