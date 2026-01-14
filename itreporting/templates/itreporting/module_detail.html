@@ -1,0 +1,14 @@
+{% extends "itreporting/base.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<h1>{{ module.code }} - {{ module.name }}</h1>
+
+<p><strong>Credits:</strong> {{ module.credit }}</p>
+<p><strong>Category:</strong> {{ module.category }}</p>
+<p><strong>Availability:</strong> {{ module.availability }}</p>
+<p><strong>Description:</strong> {{ module.description }}</p>
+<p><strong>Course:</strong> <a href="{% url 'itreporting:course-detail' module.course.pk %}">{{ module.course.name }}</a></p>
+
+<a href="{% url 'itreporting:module' %}">Back to all modules</a>
+{% endblock %}

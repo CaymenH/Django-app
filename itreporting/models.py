@@ -28,6 +28,10 @@ class Module(models.Model):
     course = models.ForeignKey("Course", related_name= "modules", on_delete=models.CASCADE)
     def __str__(self):
         return f'{self.code} - {self.name}'
+    
+
+    def get_absolute_url(self):
+        return reverse('itreporting:module-detail', kwargs={'pk': self.pk})
 
 
 class Registration(models.Model):

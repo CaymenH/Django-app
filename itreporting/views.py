@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Issue, Module, Registration, Course
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -35,6 +35,14 @@ def course_detail(request, pk):
     modules = course.modules.all()       
     context = {'course': course,'modules': modules,'title': course.name}
     return render(request, 'itreporting/course_detail.html', context)
+
+
+
+def module_detail(request, pk):
+    module = get_object_or_404(Module, pk=pk)
+    context = {'module': module, 'title': module.name}
+    return render(request, 'itreporting/module_detail.html', context)
+
 
 
 class PostListView(ListView):

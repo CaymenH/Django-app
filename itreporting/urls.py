@@ -32,6 +32,7 @@ urlpatterns = [
     path('issues/<int:pk>/update/', PostUpdateView.as_view(), name = 'issue-update'),
     path('issues/<int:pk>/delete/',  PostDeleteView.as_view(), name = 'issue-delete'),
     path('course/<int:pk>/', course_detail, name='course-detail'),
+    path('module/<int:pk>/', views.module_detail, name='module-detail'),
 
 
 
