@@ -3,7 +3,10 @@ from django.http import HttpResponse
 from .models import Issue, Module, Registration, Course
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.contrib.auth.models import User
 from django.contrib import messages
+from users.models import Student
+from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy
 
 # Create your views here.
@@ -25,10 +28,12 @@ def report(request):
     daily_report = {'issues': Issue.objects.all(), 'title': 'Issues,Reported'}
     return render(request, 'itreporting/report.html', daily_report)
 
-
+@login_required
 def registration(request):
-    registration = {'registrations': Registration.objects.all(), 'title': 'Registrations'}
-    return render(request, 'itreporting/registration.html', registration)
+    student = get_object_or_404(Student, user=request.user)
+    registrations =  Registration.objects.filter(student=student)
+    context = {'registrations':registrations}
+    return render(request, 'itreporting/registration.html', context)
 
 def course_detail(request, pk):
     course = Course.objects.get(pk=pk)  
@@ -40,7 +45,8 @@ def course_detail(request, pk):
 
 def module_detail(request, pk):
     module = get_object_or_404(Module, pk=pk)
-    context = {'module': module, 'title': module.name}
+    registrations = Registration.objects.filter(module=module)
+    context = {'module': module,'registrations': registrations, 'title': module.name}
     return render(request, 'itreporting/module_detail.html', context)
 
 

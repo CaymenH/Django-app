@@ -2,4 +2,15 @@
 {% load crispy_forms_tags %}
 {% block content %}
 <h1>Welcome to the Registration page</h1>
+
+<ul>
+    {% for reg in registrations %}
+        <li>
+            {{ reg.module.code }} - {{ reg.student.user.get_full_name }}
+        </li>
+    {% empty %}
+        <li>You are not registered for any modules.</li>
+    {% endfor %}
+</ul>
+
 {% endblock %}

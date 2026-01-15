@@ -1,6 +1,7 @@
 {% extends "itreporting/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
+
 <h1>Welcome to the module page</h1>
 <ul>
 {% for module in modules %}
@@ -9,6 +10,15 @@
             {{ module.code }} – {{ module.name }}
         </a>
     </li>
+    <ul>
+    {% for reg in module.registration_set.all %}
+        <li>
+            {{ reg.student.user.get_full_name }}
+        </li>
+    {% empty %}
+        <li>No students registered for this module.</li>
+    {% endfor %}
+    </ul>
 {% endfor %}
-</ul>
+
 {% endblock %}

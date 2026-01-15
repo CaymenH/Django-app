@@ -8,7 +8,24 @@
 <p><strong>Category:</strong> {{ module.category }}</p>
 <p><strong>Availability:</strong> {{ module.availability }}</p>
 <p><strong>Description:</strong> {{ module.description }}</p>
-<p><strong>Course:</strong> <a href="{% url 'itreporting:course-detail' module.course.pk %}">{{ module.course.name }}</a></p>
+
+<p><strong>Course(s):</strong>
+  {% for course in module.courses.all %}
+    <a href="{% url 'itreporting:course-detail' course.pk %}">{{ course.name }}</a>{% if not forloop.last %}, {% endif %}
+  {% empty %}
+    No courses assigned
+  {% endfor %}
+</p>
 
 <a href="{% url 'itreporting:module' %}">Back to all modules</a>
+
+<h2>Registered Students</h2>
+<ul>
+    {% for reg in registrations %}
+        <li>{{ reg.student }}</li>
+    {% empty %}
+        <li>No students registered for this module</li>
+    {% endfor %}
+</ul>
+
 {% endblock %}
