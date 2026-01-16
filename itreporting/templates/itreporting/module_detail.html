@@ -1,7 +1,7 @@
 {% extends "itreporting/base.html" %}
 {% block content %}
 {% load crispy_forms_tags %}
-
+{% load static %}
 <h1>{{ module.code }} - {{ module.name }}</h1>
 
 <p><strong>Credits:</strong> {{ module.credit }}</p>
@@ -23,8 +23,13 @@
 <ul>
     {% for reg in registrations %}
         <li>{{ reg.student }}</li>
+         {% if reg.student.image %}
+          <img src="{{ reg.student.image.url }}">    
+      {% endif %}
+
     {% empty %}
         <li>No students registered for this module</li>
+
     {% endfor %}
 </ul>
 
