@@ -33,6 +33,8 @@ urlpatterns = [
     path('issues/<int:pk>/delete/',  PostDeleteView.as_view(), name = 'issue-delete'),
     path('course/<int:pk>/', course_detail, name='course-detail'),
     path('module/<int:pk>/', views.module_detail, name='module-detail'),
+    path('module/<int:pk>/register/', views.register_to_module, name='register_module'),
+    path('module/<int:pk>/unregister/', views.unregister_from_module, name='unregister_module'),
 
 
 
