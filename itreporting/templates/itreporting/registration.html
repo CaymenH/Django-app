@@ -6,7 +6,7 @@
 <ul>
     {% for reg in registrations %}
         <li>
-            {{ reg.module.code }} - {{ reg.student.user.get_full_name }}
+            {{ reg.module.code }} -  {{ reg.module.name }} 
         </li>
     {% empty %}
         <li>You are not registered for any modules.</li>
