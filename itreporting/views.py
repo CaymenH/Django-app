@@ -50,11 +50,16 @@ def module_detail(request, pk):
     return render(request, 'itreporting/module_detail.html', context)
 
 @login_required
+
+@login_required
 def register_to_module(request, pk):
     module = get_object_or_404(Module, pk=pk)
     student = get_object_or_404(Student, user=request.user)
     Registration.objects.get_or_create(student=student,module=module)
     return redirect('register')
+
+
+
 
 
 @login_required
@@ -63,6 +68,8 @@ def unregister_from_module(request, pk):
     student = get_object_or_404(Student, user=request.user)
     Registration.objects.filter(student=student,module=module).delete()
     return redirect('itreporting:module-detail', pk=pk)
+
+    
 
 
 class PostListView(ListView):

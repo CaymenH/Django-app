@@ -8,19 +8,28 @@
     <li>
         <a href="{% url 'itreporting:module-detail' module.pk %}">
             {{ module.code }} – {{ module.name }}
+            
+
         </a>
-    </li>
+
+         {% if module.availability == "Available" %}
+        <a href="{% url 'itreporting:register_module' module.pk %}">Register</a>
+        
+        {% endif %}
+
+        <a href="{% url 'itreporting:unregister_module' module.pk %}">Unregister</a>
+
+
     <ul>
     {% for reg in module.registration_set.all %}
-        <li>
-            {{ reg.student.user.get_full_name }}
-        </li>
+        <li>{{ reg.student.user.get_full_name }}</li>
+           
     {% empty %}
         <li>No students registered for this module.</li>
-         <a href="{% url 'itreporting:register_module' module.pk %}">Register</a>
-         <a href="{% url 'itreporting:unregister_module' module.pk %}">Unregister</a>
     {% endfor %}
     </ul>
-{% endfor %}
+</li>
+{% endfor %}        
+</ul>
 
 {% endblock %}
