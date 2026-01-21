@@ -15,7 +15,14 @@
           crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-    <style>h1 {color: #130d18;} </style>
+    
+    <style>h1 {color: #130d18;} </style>  <!-- Font override -->
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+        }
+       
+    </style>
     <title>Student IT Services - {{ title }}</title>
 </head>
 
@@ -74,22 +81,25 @@
                 </div>
                 <div class="col-md-4">
                     <div class="content-section">
-                        <h3>General Information</h3>
+                        <h3>sheffield</h3>
                         <p class="text-muted">
-                            Welcome to the university website, I hope you can find the Information and course you are looking for.
+                            Sheffield 4 Fun Facts
                         </p>
                         <ul class="list-group">
-                            <li class="list-group-item list-group-item-light">Computer Science</li>
-                            <li class="list-group-item list-group-item-light">Engineering</li>
-                            <li class="list-group-item list-group-item-light">IT</li>
-                            <li class="list-group-item list-group-item-light">Smart Computing</li>
+                            <li class="list-group-item list-group-item-light">1. The Worlds oldest football club, Sheffield is home to sheffied F.C. founded in 1857 - officially recogmised by FIFA as the worlds oldest football club.</li>
+                            <li class="list-group-item list-group-item-light">2. A City built in a Rainforest, Sheffield sits in a natural bowl of seven hills (like Rome) but its most remarkable feature is being the U.K`s greenest city with over 2 million trees.</li>
+                            <li class="list-group-item list-group-item-light">3. The Steel City Sheffield gave the world stainless steel and was the birthplace of the crucible steel process, at its peak it produced 90% of Britains steel.</li>
+                            <li class="list-group-item list-group-item-light">4. The Snooker capital of the world, Sheffield has produced more Snooker Champions than any other city and has hosted the world Snooker Championship at the Crucibke Theatre since 1977.</li>
                         </ul>
                     </div>
                 </div>
             </div>
         </main>
+        <footer class="bg-primary text-white text-center p-3" style="background-color: #4a148c !important;">
+                <div class = "container"> 
     </div>
-
+</footer>
+</div>
     <!-- Bootstrap JS (with Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
             integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

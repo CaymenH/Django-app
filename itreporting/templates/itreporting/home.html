@@ -1,8 +1,17 @@
 {% extends "itreporting/base.html" %}
 {% block content %}
 
-<h1 >University of Sheffield Hallam homepage </h1>
+<h1>Welcome the Sheffield </h1>
+<h1>Hallam Homepage.</h1>
 
+<P> Take a look at the courses we have to offer, </P>
+<p>We hope to see you in the next</p>
+<p>Academic Year.</p>
+{% for course in courses %}
+<a href="{% url 'itreporting:course-detail' course.pk %}"class="btn btn-primary btn-lg mt-3"></a>  ></a>
+{{ course.name }} 
+ 
+{% endfor %}
 
 
 {% endblock %}

@@ -11,7 +11,8 @@ from django.urls import reverse_lazy
 
 # Create your views here.
 def home(request):
-    return render(request, 'itreporting/home.html', {'title': 'Welcome'})
+    courses = Course.objects.all()
+    return render(request, 'itreporting/home.html', {'title': 'Welcome','courses':courses})
 
 def about(request):
     return render(request, 'itreporting/about.html', {'title': 'About'})
