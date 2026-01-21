@@ -16,7 +16,7 @@
     No courses assigned
   {% endfor %}
 </p>
-
+<a href="{% url 'itreporting:unregister_module' module.pk %}">Unregister</a>
 <a href="{% url 'itreporting:module' %}">Back to all modules</a>
 
 <h2>Registered Students</h2>
@@ -34,5 +34,4 @@
 </ul>
 
 
-  {% endif %}
 {% endblock %}

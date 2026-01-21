@@ -12,12 +12,13 @@
 
         </a>
 
-         {% if module.availability == "Available" %}
+         {% if module.availability == "Available" and user.is_authenticated %}
         <a href="{% url 'itreporting:register_module' module.pk %}">Register</a>
         
         {% endif %}
-
+        {% if user.is_authenticated %}
         <a href="{% url 'itreporting:unregister_module' module.pk %}">Unregister</a>
+        {% endif %}
 
 
     <ul>

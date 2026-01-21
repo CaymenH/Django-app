@@ -49,14 +49,14 @@ def module_detail(request, pk):
     context = {'module': module,'registrations': registrations, 'title': module.name}
     return render(request, 'itreporting/module_detail.html', context)
 
-@login_required
+
 
 @login_required
 def register_to_module(request, pk):
     module = get_object_or_404(Module, pk=pk)
     student = get_object_or_404(Student, user=request.user)
     Registration.objects.get_or_create(student=student,module=module)
-    return redirect('register')
+    return redirect('itreporting:module')
 
 
 
@@ -67,7 +67,7 @@ def unregister_from_module(request, pk):
     module = get_object_or_404(Module, pk=pk)
     student = get_object_or_404(Student, user=request.user)
     Registration.objects.filter(student=student,module=module).delete()
-    return redirect('itreporting:module-detail', pk=pk)
+    return redirect('itreporting:module')
 
     
 

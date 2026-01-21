@@ -7,10 +7,13 @@
     {% for reg in registrations %}
         <li>
             {{ reg.module.code }} -  {{ reg.module.name }} 
+            <a href="{% url 'itreporting:unregister_module' reg.module.pk %}">Unregister</a>
+
         </li>
     {% empty %}
         <li>You are not registered for any modules.</li>
     {% endfor %}
 </ul>
+
 
 {% endblock %}
